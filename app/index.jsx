@@ -1,18 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
-import img from '../assets/img/Charles.jpg'
 import React from 'react'
+import {Link} from 'expo-router'
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Image source={img}/>
 
       <Text style={styles.title}>Home</Text>
       <Text>Home</Text>
 
-      <View style={styles.card} >
-        <Text>Hello, card</Text>
-      </View>
+      <Link href="/about" style={styles.link}>About Page</Link>
+      <Link href="/contact" style={styles.link}>Contact Page</Link>
     </View>
   )
 }
@@ -29,10 +27,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18
   },
-  card: {
-    backgroundColor: '#eee',
-    padding: 20,
-    borderRadius: 5,
-    boxShadow: '4px 4px rgba(0,0,0,0.1)' 
+
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
   }
 })
