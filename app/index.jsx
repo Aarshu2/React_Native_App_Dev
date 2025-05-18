@@ -1,17 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import {Link} from 'expo-router'
+import { StyleSheet, Text } from 'react-native'
+import { Link } from 'expo-router'
+
+import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
+import ThemedText from '../components/ThemedText'
 
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
+      <ThemedLogo/>
+      <Spacer height={20} />
 
-      <Text style={styles.title}>Home</Text>
-      <Text>Home</Text>
+      <ThemedText style={styles.title} title={true}>Number 1</ThemedText>
 
-      <Link href="/about" style={styles.link}>About Page</Link>
-      <Link href="/contact" style={styles.link}>Contact Page</Link>
-    </View>
+      <Spacer height={10}/>
+      <ThemedText>Reading list app</ThemedText>
+      <Spacer />
+
+      <Link href="/about" style={styles.link}>
+        <ThemedText>About Page</ThemedText>
+      </Link>
+
+      <Link href="/contact" style={styles.link}>
+        <ThemedText>Contact Page</ThemedText>
+      </Link>
+
+    </ThemedView>
   )
 }
 
@@ -27,7 +42,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18
   },
-
+  card: {
+    backgroundColor: '#eeeeee',
+    padding: 20,
+    borderRadius: 5,
+    boxShadow: '4px 4px rgba(0, 0, 0, 0.1)'
+  },
   link: {
     marginVertical: 10,
     borderBottomWidth: 1,
